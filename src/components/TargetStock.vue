@@ -28,30 +28,30 @@ export default {
   data () {
     return {
       intro: 'Manage Target Stock',
-      stock: JSON.parse(localStorage.getItem("stock") || "[]"),
-      newItemName: "",
-      newItemTarget: 1,
+      stock: JSON.parse(localStorage.getItem('stock') || '[]'),
+      newItemName: '',
+      newItemTarget: 1
     }
   },
   methods: {
-    updateList() {
-      localStorage.setItem("stock", JSON.stringify(this.stock));
+    updateList () {
+      localStorage.setItem('stock', JSON.stringify(this.stock))
     },
-    addItem() {
+    addItem () {
       this.stock.push({
         name: this.newItemName,
         target: this.newItemTarget,
-        current: 0,
-      });
-      this.newItemName = "";
-      this.newItemTarget = 1;
-      this.updateList();
+        current: 0
+      })
+      this.newItemName = ''
+      this.newItemTarget = 1
+      this.updateList()
     },
-    removeItem(index) {
-      this.stock.splice(index, 1);
-      this.updateList();
-    },
-  },
+    removeItem (index) {
+      this.stock.splice(index, 1)
+      this.updateList()
+    }
+  }
 }
 </script>
 

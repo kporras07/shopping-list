@@ -8,7 +8,7 @@ export default {
   data () {
     return {
       intro: 'Get My Shopping List',
-      stock: JSON.parse(localStorage.getItem("stock") || "[]"),
+      stock: JSON.parse(localStorage.getItem('stock') || '[]')
     }
   }
 }

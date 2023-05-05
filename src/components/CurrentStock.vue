@@ -21,14 +21,14 @@ export default {
     Menu
   },
   methods: {
-    updateList() {
-      localStorage.setItem("stock", JSON.stringify(this.stock));
-    },
+    updateList () {
+      localStorage.setItem('stock', JSON.stringify(this.stock))
+    }
   },
   data () {
     return {
       intro: 'Manage Current Stock',
-      stock: JSON.parse(localStorage.getItem("stock") || "[]"),
+      stock: JSON.parse(localStorage.getItem('stock') || '[]')
     }
   }
 }
