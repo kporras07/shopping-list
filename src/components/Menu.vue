@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 ul {
   list-style-type: none;
   padding: 0;

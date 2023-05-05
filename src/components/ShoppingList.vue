@@ -7,7 +7,8 @@ export default {
   },
   data () {
     return {
-      intro: 'Get My Shopping List'
+      intro: 'Get My Shopping List',
+      stock: JSON.parse(localStorage.getItem("stock") || "[]"),
     }
   }
 }
@@ -17,6 +18,11 @@ export default {
   <div class="shopping-list">
     <h1>{{ intro }}</h1>
     <Menu />
+    <ul>
+      <li v-for="(item, index) in stock" :key="index" v-if="item.current < item.target">
+        <span>{{ item.name }}: {{ item.target - item.current }}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -28,12 +34,5 @@ h1, h2 {
 ul {
   list-style-type: none;
   padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 </style>
